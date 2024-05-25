@@ -82,7 +82,7 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
             <TypeIt options={{ loop: true }}>A Full-stack developer</TypeIt>
           </Typography>
           <Typography variant="subtitle1" mb={1}>
-            With 6 years of experience, Equipped with great coding, debugging and project management abilities.
+            With 7 years of experience, Equipped with great coding, debugging and project management abilities.
           </Typography>
           <IntroButtonsFor
             handleOpenResumeInNewTab={handleOpenResumeInNewTab}

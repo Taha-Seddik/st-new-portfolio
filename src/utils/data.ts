@@ -65,7 +65,18 @@ export const ExperienceDataArr = [
 ];
 
 export const LanguagesSkillsDataArr = ["Typescript", "Javascript", "C#", "C++"];
-export const FrontendSkillsDataArr = ["ReactJS", "Vue 3", "Angular", "Redux", "Pinia", "Material UI", "Bootstrap", "Ionic", "Html", "CSS"];
+export const FrontendSkillsDataArr = [
+  "ReactJS",
+  "Vue 3",
+  "Angular",
+  "Redux",
+  "Pinia",
+  "Material UI",
+  "Bootstrap",
+  "Ionic",
+  "Html",
+  "CSS",
+];
 export const BackendSkillsDataArr = [
   ".NET core",
   "Entity framework",
@@ -79,12 +90,16 @@ export const BackendSkillsDataArr = [
   "Mongoose",
 ];
 
+export const ToolsSkillsDataArr = ["XUnit", "Jest", "Webpack", "Rollup", "Vite", "GraphQL", "Apollo"];
+
+export const DatabasesSkillsDataArr = ["MSSQL", "MYSQL", "MongoDB", "CosmosDB"];
+
 export const ProjectsData: ProjectDetails[] = [
   {
     title: "Furniture E-commerce application",
     description: "Developed a responsive SEO optimized online store using ReactJS and ExpressJS",
     techStack: ["ExpressJS", "ReactJS"],
-    demoLink: "https://art2doigt.tn/demo/",
+    demoLink: "https://art2doigt.tn/categoryProducts/Salon/97e6423f-9ef2-465a-9e41-b4944d377516",
     medias: [
       { src: "/screenshots/shop1.png", type: "image" },
       { src: "/screenshots/shop2.png", type: "image" },
@@ -102,6 +117,7 @@ export const ProjectsData: ProjectDetails[] = [
     githubLink: "https://github.com/Taha-Seddik/oklati-app",
     medias: [
       { src: "/screenshots/oklati1.png", type: "video", embedUrl: "/screenshots/oklati0.mp4" },
+      { src: "/screenshots/oklati0.jpg", type: "image" },
       { src: "/screenshots/oklati2.png", type: "image" },
       { src: "/screenshots/oklati3.png", type: "image" },
       { src: "/screenshots/oklati4.png", type: "image" },

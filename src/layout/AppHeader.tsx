@@ -12,7 +12,7 @@ const CustomHeader = styled("header")(({ theme }) => ({
   boxShadow: theme.shadows[1],
   zIndex: 10,
   padding: theme.spacing(1, 4),
-  background: "rgb(34, 40, 49)",
+  background: theme.palette.mode === "dark" ? "#000000" : "rgb(34, 40, 49)",
 }));
 
 const HeaderContentBlock = styled("div")(({ theme }) => ({

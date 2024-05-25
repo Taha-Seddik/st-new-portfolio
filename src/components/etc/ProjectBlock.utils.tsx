@@ -108,7 +108,8 @@ const NavButton = styled(IconButton)(({ theme }) => ({
   position: "absolute",
   top: "50%",
   transform: "translate(0, -50%)",
-  zIndex: 9999,
+  zIndex: 4,
+  color: "gray",
 }));
 
 export const RightNavRendrer: React.FC<{ onClick: React.MouseEventHandler<HTMLElement>; disabled: boolean }> = (

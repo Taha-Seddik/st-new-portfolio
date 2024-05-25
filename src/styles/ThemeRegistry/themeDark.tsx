@@ -10,10 +10,18 @@ const rubic = Inter({
 const theme = createTheme({
   palette: {
     mode: "dark",
+    background: {
+      default: "#04293A",
+      paper: "#064663",
+    },
+    primary: {
+      main: "#191919",
+    },
   },
   typography: {
     fontFamily: rubic.style.fontFamily,
   },
+
   components: {},
 });
 

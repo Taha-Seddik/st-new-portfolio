@@ -1,6 +1,6 @@
 "use client";
 
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import { HomeSections, contentMaxWidth } from "@/utils/constants";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -51,6 +51,8 @@ export const EducationExperienceComponent: React.FC<{}> = ({}) => {
 };
 
 const EducationBlock: React.FC<{}> = () => {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
   return (
     <Paper>
       <Typography variant="h6" fontWeight={500} p={2} pb={0}>
@@ -70,7 +72,12 @@ const EducationBlock: React.FC<{}> = () => {
                 <Typography variant="body2" color="text.secondary">
                   {educationObj.place}
                 </Typography>
-                <Chip color="primary" variant="outlined" label={educationObj.fromTo} size="small" />
+                <Chip
+                  color="primary"
+                  variant={isDark ? "filled" : "outlined"}
+                  label={educationObj.fromTo}
+                  size="small"
+                />
               </Box>
             </ListItem>
             {ExperienceDataArr.length - 1 !== i ? <Divider /> : null}
@@ -82,6 +89,8 @@ const EducationBlock: React.FC<{}> = () => {
 };
 
 const ExperienceBlock: React.FC<{}> = () => {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
   return (
     <Paper>
       <Typography variant="h6" fontWeight={500} p={2} pb={0}>
@@ -92,7 +101,12 @@ const ExperienceBlock: React.FC<{}> = () => {
           <React.Fragment key={expObj.key}>
             <ListItem alignItems="flex-start" sx={{ py: 1.5 }}>
               <ListItemAvatar>
-                <Avatar alt="CompanyLogo" src={expObj.imgPath} variant="rounded" sx={{ border: "1px solid lightgray" }} />
+                <Avatar
+                  alt="CompanyLogo"
+                  src={expObj.imgPath}
+                  variant="rounded"
+                  sx={{ border: "1px solid lightgray" }}
+                />
               </ListItemAvatar>
               <Box flex="1">
                 <Typography variant="body2" color="text.primary" fontWeight={500}>
@@ -101,7 +115,7 @@ const ExperienceBlock: React.FC<{}> = () => {
                 <Typography variant="body2" color="text.secondary">
                   {expObj.companyName}
                 </Typography>
-                <Chip color="primary" variant="outlined" label={expObj.fromTo} size="small" />
+                <Chip color="primary" variant={isDark ? "filled" : "outlined"} label={expObj.fromTo} size="small" />
               </Box>
             </ListItem>
             {ExperienceDataArr.length - 1 !== i ? <Divider /> : null}

@@ -8,9 +8,7 @@ const rubic = Inter({
 });
 
 const theme = createTheme({
-  palette: {
-    // mode: "dark",
-  },
+  palette: {},
   typography: {
     fontFamily: rubic.style.fontFamily,
   },
