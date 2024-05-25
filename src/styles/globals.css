@@ -1,0 +1,94 @@
+@import "./base/_flexUtils.css";
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.fullHW {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  /* background-color: #f8f8f8 !important; */
+}
+
+/* body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.root {
+  height: 100vh;
+  width: 100vw;
+} */
+
+.customLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+}
+
+.appSpinnerWrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  background: white;
+}
+
+.CentredContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absoluteCentredContentWithBackdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.loweredTxt {
+  text-transform: lowercase !important;
+}
+
+.image-gallery-slide {
+  width: 100%;
+}
+
+.image-gallery-content:not(.fullscreen) .image-gallery-slide .image-gallery-image {
+  height: 315px;
+  background-color: #f8f8f8 !important;
+}
+
+.image-gallery-content:not(.fullscreen) .image-gallery-slide video {
+  height: 315px;
+  background-color: #f8f8f8 !important;
+}
+
+.image-gallery-content .image-gallery-slide video {
+  height: 90vh;
+  background-color: #f8f8f8 !important;
+}
+
+.image-gallery-thumbnail-image {
+  object-fit: cover;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+}
