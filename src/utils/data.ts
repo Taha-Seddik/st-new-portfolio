@@ -10,19 +10,19 @@ export const NavigationData: { text: string; scrollTo: string }[] = [
 
 export const EductionDataArr = [
   {
-    label: "SOFTWARE ENGINEERING DIPLOMA",
+    label: "Engineer's Degree - Software Engineering",
     place: "University of sciences in Tunis",
     fromTo: "2014-2017",
     imgPath: "/fst.png",
   },
   {
-    label: "PREPARATORY ENGINEERING INSTITUTE",
+    label: "Preparatory Engineering Studies - Technology",
     place: "IPEIM",
     fromTo: "2012-2014",
     imgPath: "/ipeim.jpg",
   },
   {
-    label: "BACHELOR DEGREE (TECHNIQUES)",
+    label: "Bachelor of Technology (B.Tech.) - Technology",
     place: "Ibno Rochd high school",
     fromTo: "2012",
     imgPath: "/ibnoRochd.png",
@@ -32,9 +32,17 @@ export const EductionDataArr = [
 export const ExperienceDataArr = [
   {
     key: "c78af883-c9b0-4ec5-9f23-2f8c24f232db",
+    workLabel: "Full-stack developer",
+    companyName: "Talan",
+    fromTo: "January 2024 - Present",
+    description: "",
+    imgPath: "/talan.jpg",
+  },
+  {
+    key: "c78af883-c9b0-4ec5-9f23-2f8c24f232db",
     workLabel: "Frontend Team Lead",
     companyName: "TikiLearning",
-    fromTo: "June 2023-Present",
+    fromTo: "June 2023-January 2024",
     description: "",
     imgPath: "/tiki.jpg",
   },

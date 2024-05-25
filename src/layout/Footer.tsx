@@ -38,7 +38,7 @@ export const AppFooter: React.FC<{}> = ({}) => {
       <InnerContent>
         <Box display="flex" justifyContent="center">
           <CustomIconBtn aria-label="linkedin" onClick={handleGoToLinkeinProfile}>
-            <LinkedInIcon color="primary" fontSize="large" />
+            <LinkedInIcon fontSize="large" />
           </CustomIconBtn>
           <CustomIconBtn aria-label="github" onClick={handleGoToGithubProfile}>
             <GitHubIcon color="action" fontSize="large" />

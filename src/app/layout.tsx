@@ -13,16 +13,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
-        <body>
-          <ThemeRegistry>
-            <Box display="flex" flexDirection="column" className="root ">
-              <AppHeader />
-              <main className="takeTheRest">{children}</main>
-              <AppFooter />
-            </Box>
-          </ThemeRegistry>
-        </body>
+        <ThemeRegistry>
+          <Box display="flex" flexDirection="column" className="root ">
+            <AppHeader />
+            <main className="takeTheRest">{children}</main>
+            <AppFooter />
+          </Box>
+        </ThemeRegistry>
       </body>
     </html>
   );
