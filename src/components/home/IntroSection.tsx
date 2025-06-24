@@ -40,7 +40,7 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
   const isOnMd = useIsUpMd();
 
   const handleOpenResumeInNewTab = () => {
-    const fileUrl = `/resume/Taha-Fullstack-EN.pdf`;
+    const fileUrl = `/resume/Taha-Resume-EN.pdf`;
     window.open(fileUrl, "_blank");
   };
 
