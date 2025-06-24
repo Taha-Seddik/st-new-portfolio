@@ -9,12 +9,9 @@ import { previewSizes } from "@/utils/constants";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import ArrowCircleLeft from "@mui/icons-material/ArrowCircleLeft";
+import Image from "next/image";
 
-export const makeGalleryItems = (
-  project: ProjectDetails,
-  showVideo: boolean,
-  toggleShowVideo: () => void
-) => {
+export const makeGalleryItems = (project: ProjectDetails, showVideo: boolean, toggleShowVideo: () => void) => {
   const result: (ReactImageGalleryItem & any)[] = [];
   const medias = project?.medias || [];
   medias.forEach((x) => {
@@ -82,12 +79,7 @@ const VideoSlideRendrer: React.FC<VideoRendrerProps> = (props) => {
               <CloseIcon />
             </StopButton>
           </Tooltip>
-          <video
-            width={previewSizes.w}
-            height={previewSizes.h}
-            controls
-            autoPlay
-          >
+          <video width={previewSizes.w} height={previewSizes.h} controls autoPlay>
             <source src={props.itemDetails?.embedUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -95,12 +87,7 @@ const VideoSlideRendrer: React.FC<VideoRendrerProps> = (props) => {
       ) : (
         <>
           <Tooltip title="play video" placement="top">
-            <PlayButton
-              variant="contained"
-              color="error"
-              aria-label="play"
-              onClick={props.toggleShowVideo}
-            >
+            <PlayButton variant="contained" color="error" aria-label="play" onClick={props.toggleShowVideo}>
               <PlayArrowIcon />
             </PlayButton>
           </Tooltip>
@@ -131,12 +118,7 @@ export const RightNavRendrer: React.FC<{
   disabled: boolean;
 }> = (props) => {
   return (
-    <NavButton
-      sx={{ right: "6%" }}
-      aria-label="right"
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
+    <NavButton sx={{ right: "6%" }} aria-label="right" onClick={props.onClick} disabled={props.disabled}>
       <ArrowCircleRightIcon />
     </NavButton>
   );
@@ -147,12 +129,7 @@ export const LeftNavRendrer: React.FC<{
   disabled: boolean;
 }> = (props) => {
   return (
-    <NavButton
-      sx={{ left: "6%" }}
-      aria-label="left"
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
+    <NavButton sx={{ left: "6%" }} aria-label="left" onClick={props.onClick} disabled={props.disabled}>
       <ArrowCircleLeft />
     </NavButton>
   );

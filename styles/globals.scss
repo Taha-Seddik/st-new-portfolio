@@ -1,6 +1,7 @@
 @use "@/styles/fonts";
 @use "@/styles/utilitiesFlex";
 @use "@/styles/utilities";
+@import "~react-image-gallery/styles/css/image-gallery.css";
 
 html,
 body {
@@ -84,9 +85,7 @@ ul {
   width: 100%;
 }
 
-.image-gallery-content:not(.fullscreen)
-  .image-gallery-slide
-  .image-gallery-image {
+.image-gallery-content:not(.fullscreen) .image-gallery-slide .image-gallery-image {
   height: 315px;
   background-color: #f8f8f8 !important;
 }

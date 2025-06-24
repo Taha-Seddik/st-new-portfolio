@@ -73,7 +73,7 @@ const SideNavHeadSide: React.FC<{}> = () => {
   return (
     <DrawerHeader className="flexCenterRow" sx={{ height: 120 }}>
       <div className="flexColumnCenterCenter">
-        <img src="/tahaLogo.png" alt="logo" width={80} height={80} />
+        <img src="/mix/tahaLogo.png" alt="logo" width={80} height={80} />
       </div>
     </DrawerHeader>
   );

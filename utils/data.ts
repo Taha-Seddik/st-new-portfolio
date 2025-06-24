@@ -13,19 +13,19 @@ export const EductionDataArr = [
     label: "Engineer's Degree - Software Engineering",
     place: "University of sciences in Tunis",
     fromTo: "2014-2017",
-    imgPath: "/fst.png",
+    imgPath: "/mix/fst.png",
   },
   {
     label: "Preparatory Engineering Studies - Technology",
     place: "IPEIM",
     fromTo: "2012-2014",
-    imgPath: "/ipeim.jpg",
+    imgPath: "/mix/ipeim.jpg",
   },
   {
     label: "Bachelor of Technology (B.Tech.) - Technology",
     place: "Ibno Rochd high school",
     fromTo: "2012",
-    imgPath: "/ibnoRochd.png",
+    imgPath: "/mix/ibnoRochd.png",
   },
 ];
 
@@ -36,15 +36,15 @@ export const ExperienceDataArr = [
     companyName: "Talan",
     fromTo: "January 2024 - Present",
     description: "",
-    imgPath: "/talan.jpg",
+    imgPath: "/mix/talan.jpg",
   },
   {
-    key: "c78af883-c9b0-4ec5-9f23-2f8c24f232db",
+    key: "c78af883-c9b0-4ec5-9f23-2f8c24f23fdb",
     workLabel: "Frontend Team Lead",
     companyName: "TikiLearning",
     fromTo: "June 2023-January 2024",
     description: "",
-    imgPath: "/tiki.jpg",
+    imgPath: "/mix/tiki.jpg",
   },
   {
     key: "32f60efb-4952-4815-8dfc-2fdfe714a046",
@@ -52,7 +52,7 @@ export const ExperienceDataArr = [
     companyName: "Blueberry Consulting",
     fromTo: "June 2022-May 2023",
     description: "",
-    imgPath: "/blueberry.png",
+    imgPath: "/mix/blueberry.png",
   },
   {
     key: "b0bf73a5-e181-4c9c-a7d4-9bb05025b059",
@@ -60,7 +60,7 @@ export const ExperienceDataArr = [
     companyName: "Tnpulse",
     fromTo: "June 2017-May 2022",
     description: "",
-    imgPath: "/suivi.png",
+    imgPath: "/mix/suivi.png",
   },
   // {
   //   key: "c4ce2bd0-1a69-45fd-ae81-32429703826d",

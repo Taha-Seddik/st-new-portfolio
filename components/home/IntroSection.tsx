@@ -55,9 +55,7 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
     const body = "Opportuniy body";
 
     // Construct the mailto link
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Open the user's default default email client
     window.location.href = mailtoLink;
@@ -84,8 +82,7 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
             <TypeIt options={{ loop: true }}>A Full-stack developer</TypeIt>
           </Typography>
           <Typography variant="subtitle1" mb={1}>
-            With 7 years of experience, Equipped with great coding, debugging
-            and project management abilities.
+            With 7 years of experience, Equipped with great coding, debugging and project management abilities.
           </Typography>
           <IntroButtonsFor
             handleOpenResumeInNewTab={handleOpenResumeInNewTab}
@@ -95,12 +92,7 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
         </Grid>
         <Grid size={{ md: 4, xs: 12 }} display="flex">
           <span style={{ flexGrow: 1 }} />
-          <CustomAvatar
-            sizes=""
-            alt="taha seddik"
-            src="/tahaImg3.png"
-            variant="circular"
-          />
+          <CustomAvatar sizes="" alt="taha seddik" src="/mix/tahaImg3.png" variant="circular" />
         </Grid>
       </Grid>
     </CustomSection>
@@ -119,22 +111,12 @@ const IntroButtonsFor: React.FC<IntroBTNsProps> = (props) => {
     return (
       <>
         <Button variant="contained" onClick={props.handleOpenResumeInNewTab}>
-          <PictureAsPdfIcon sx={{ mr: 1 }} />R
-          <span className="loweredTxt">esume</span>
+          <PictureAsPdfIcon sx={{ mr: 1 }} />R<span className="loweredTxt">esume</span>
         </Button>
-        <Button
-          variant="contained"
-          onClick={props.handleGoToGithubProfile}
-          sx={{ ml: 1 }}
-        >
-          <GitHubIcon sx={{ mr: 1 }} />G
-          <span className="loweredTxt">ithub</span>
+        <Button variant="contained" onClick={props.handleGoToGithubProfile} sx={{ ml: 1 }}>
+          <GitHubIcon sx={{ mr: 1 }} />G<span className="loweredTxt">ithub</span>
         </Button>
-        <Button
-          variant="contained"
-          onClick={props.handleOpenSendMailPanel}
-          sx={{ ml: 1 }}
-        >
+        <Button variant="contained" onClick={props.handleOpenSendMailPanel} sx={{ ml: 1 }}>
           <MailIcon sx={{ mr: 1 }} />E<span className="loweredTxt">mail</span>
         </Button>
       </>
@@ -142,29 +124,13 @@ const IntroButtonsFor: React.FC<IntroBTNsProps> = (props) => {
   } else {
     return (
       <>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={props.handleOpenResumeInNewTab}
-        >
-          <PictureAsPdfIcon sx={{ mr: 1 }} />D
-          <span className="loweredTxt">ownload Resume</span>
+        <Button variant="contained" color="primary" onClick={props.handleOpenResumeInNewTab}>
+          <PictureAsPdfIcon sx={{ mr: 1 }} />D<span className="loweredTxt">ownload Resume</span>
         </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={props.handleGoToGithubProfile}
-          sx={{ ml: 1 }}
-        >
-          <GitHubIcon sx={{ mr: 1 }} />G
-          <span className="loweredTxt">ithub</span>
+        <Button variant="contained" color="primary" onClick={props.handleGoToGithubProfile} sx={{ ml: 1 }}>
+          <GitHubIcon sx={{ mr: 1 }} />G<span className="loweredTxt">ithub</span>
         </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={props.handleOpenSendMailPanel}
-          sx={{ ml: 1 }}
-        >
+        <Button variant="contained" color="primary" onClick={props.handleOpenSendMailPanel} sx={{ ml: 1 }}>
           <MailIcon sx={{ mr: 1 }} />
           <span className="loweredTxt">{myEmail}</span>
         </Button>

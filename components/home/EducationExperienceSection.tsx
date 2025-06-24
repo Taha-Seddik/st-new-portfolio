@@ -66,11 +66,7 @@ const EducationBlock: React.FC<{}> = () => {
                 <Avatar alt="educationImg" src={educationObj.imgPath} />
               </ListItemAvatar>
               <Box flex="1">
-                <Typography
-                  variant="body2"
-                  color="text.primary"
-                  fontWeight={500}
-                >
+                <Typography variant="body2" color="text.primary" fontWeight={500}>
                   {educationObj.label}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
@@ -84,7 +80,7 @@ const EducationBlock: React.FC<{}> = () => {
                 />
               </Box>
             </ListItem>
-            {ExperienceDataArr.length - 1 !== i ? <Divider /> : null}
+            {EductionDataArr.length - 1 == i ? null : <Divider />}
           </React.Fragment>
         ))}
       </List>
@@ -113,22 +109,13 @@ const ExperienceBlock: React.FC<{}> = () => {
                 />
               </ListItemAvatar>
               <Box flex="1">
-                <Typography
-                  variant="body2"
-                  color="text.primary"
-                  fontWeight={500}
-                >
+                <Typography variant="body2" color="text.primary" fontWeight={500}>
                   {expObj.workLabel}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {expObj.companyName}
                 </Typography>
-                <Chip
-                  color="primary"
-                  variant={isDark ? "filled" : "outlined"}
-                  label={expObj.fromTo}
-                  size="small"
-                />
+                <Chip color="primary" variant={isDark ? "filled" : "outlined"} label={expObj.fromTo} size="small" />
               </Box>
             </ListItem>
             {ExperienceDataArr.length - 1 !== i ? <Divider /> : null}
