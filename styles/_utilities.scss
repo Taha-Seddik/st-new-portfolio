@@ -1,0 +1,47 @@
+.fullH {
+  height: 100%;
+}
+
+.appPx {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @media only screen and (max-width: 900px) {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+.appP {
+  padding: 40px;
+
+  @media only screen and (max-width: 900px) {
+    padding: 15px !important;
+  }
+}
+
+.appMx {
+  margin-left: 40px;
+  margin-right: 40px;
+
+  @media only screen and (max-width: 900px) {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+}
+
+.roundedFull {
+  border-radius: 9999px;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.lightShadow {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.pageMarginB {
+  margin-bottom: 20px;
+}
