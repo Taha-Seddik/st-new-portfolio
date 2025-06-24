@@ -1,4 +1,4 @@
-import { ProjectDetails } from "@/models/projectDetails";
+import { MediaType, ProjectDetails } from "@/models/projectDetails";
 import IconButton from "@mui/material/IconButton";
 import { ReactImageGalleryItem } from "react-image-gallery";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -10,7 +10,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import ArrowCircleLeft from "@mui/icons-material/ArrowCircleLeft";
 
-export const makeGalleryItems = (project: ProjectDetails, showVideo: boolean, toggleShowVideo: () => void) => {
+export const makeGalleryItems = (
+  project: ProjectDetails,
+  showVideo: boolean,
+  toggleShowVideo: () => void
+) => {
   const result: (ReactImageGalleryItem & any)[] = [];
   const medias = project?.medias || [];
   medias.forEach((x) => {
@@ -27,7 +31,7 @@ export const makeGalleryItems = (project: ProjectDetails, showVideo: boolean, to
           original: `${x.src}`,
           thumbnail: `${x.src}`,
           embedUrl: `${x.embedUrl}`,
-          renderItem: (item) => (
+          renderItem: (item: MediaType) => (
             <VideoSlideRendrer
               project={project}
               itemDetails={item}
@@ -78,7 +82,12 @@ const VideoSlideRendrer: React.FC<VideoRendrerProps> = (props) => {
               <CloseIcon />
             </StopButton>
           </Tooltip>
-          <video width={previewSizes.w} height={previewSizes.h} controls autoPlay>
+          <video
+            width={previewSizes.w}
+            height={previewSizes.h}
+            controls
+            autoPlay
+          >
             <source src={props.itemDetails?.embedUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -86,7 +95,12 @@ const VideoSlideRendrer: React.FC<VideoRendrerProps> = (props) => {
       ) : (
         <>
           <Tooltip title="play video" placement="top">
-            <PlayButton variant="contained" color="error" aria-label="play" onClick={props.toggleShowVideo}>
+            <PlayButton
+              variant="contained"
+              color="error"
+              aria-label="play"
+              onClick={props.toggleShowVideo}
+            >
               <PlayArrowIcon />
             </PlayButton>
           </Tooltip>
@@ -112,21 +126,33 @@ const NavButton = styled(IconButton)(({ theme }) => ({
   color: "gray",
 }));
 
-export const RightNavRendrer: React.FC<{ onClick: React.MouseEventHandler<HTMLElement>; disabled: boolean }> = (
-  props
-) => {
+export const RightNavRendrer: React.FC<{
+  onClick: React.MouseEventHandler<HTMLElement>;
+  disabled: boolean;
+}> = (props) => {
   return (
-    <NavButton sx={{ right: "6%" }} aria-label="right" onClick={props.onClick} disabled={props.disabled}>
+    <NavButton
+      sx={{ right: "6%" }}
+      aria-label="right"
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
       <ArrowCircleRightIcon />
     </NavButton>
   );
 };
 
-export const LeftNavRendrer: React.FC<{ onClick: React.MouseEventHandler<HTMLElement>; disabled: boolean }> = (
-  props
-) => {
+export const LeftNavRendrer: React.FC<{
+  onClick: React.MouseEventHandler<HTMLElement>;
+  disabled: boolean;
+}> = (props) => {
   return (
-    <NavButton sx={{ left: "6%" }} aria-label="left" onClick={props.onClick} disabled={props.disabled}>
+    <NavButton
+      sx={{ left: "6%" }}
+      aria-label="left"
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
       <ArrowCircleLeft />
     </NavButton>
   );

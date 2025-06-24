@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import { myEmail } from "@/utils/constants";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MailIcon from "@mui/icons-material/Mail";
 
@@ -37,14 +36,19 @@ export const AppFooter: React.FC<{}> = ({}) => {
     <Container>
       <InnerContent>
         <Box display="flex" justifyContent="center">
-          <CustomIconBtn aria-label="linkedin" onClick={handleGoToLinkeinProfile}>
+          <CustomIconBtn
+            aria-label="linkedin"
+            onClick={handleGoToLinkeinProfile}
+          >
             <LinkedInIcon fontSize="large" />
           </CustomIconBtn>
           <CustomIconBtn aria-label="github" onClick={handleGoToGithubProfile}>
             <GitHubIcon color="action" fontSize="large" />
           </CustomIconBtn>
         </Box>
-        <Typography variant="caption">Copyright © {new Date().getFullYear()} All rights reserved</Typography>
+        <Typography variant="caption">
+          Copyright © {new Date().getFullYear()} All rights reserved
+        </Typography>
       </InnerContent>
     </Container>
   );
