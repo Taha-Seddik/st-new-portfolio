@@ -30,14 +30,10 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ params, children }: RootLayoutProps) {
-  const cookieStore = await cookies();
-  const themeCookie = cookieStore.get("THEME_MODE")?.value;
-  const initialTheme = themeCookie === "dark" ? "dark" : "light";
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ColorModeProvider initialTheme={initialTheme}>
+        <ColorModeProvider>
           <AppRouterCacheProvider>
             <CssBaseline />
             <AppHeader />

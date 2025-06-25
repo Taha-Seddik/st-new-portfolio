@@ -11,6 +11,7 @@ import TypeIt from "typeit-react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MailIcon from "@mui/icons-material/Mail";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import { withBasePath } from "@/utils/withBasePath";
 
 const CustomSection = styled("section")(({ theme }) => ({
   margin: "0px auto",
@@ -92,7 +93,7 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
         </Grid>
         <Grid size={{ md: 4, xs: 12 }} display="flex">
           <span style={{ flexGrow: 1 }} />
-          <CustomAvatar sizes="" alt="taha seddik" src="/mix/tahaImg3.png" variant="circular" />
+          <CustomAvatar sizes="" alt="taha seddik" src={withBasePath("/mix/tahaImg3.png")} variant="circular" />
         </Grid>
       </Grid>
     </CustomSection>

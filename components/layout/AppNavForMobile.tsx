@@ -8,6 +8,7 @@ import { styled } from "@mui/material/styles";
 import { NavigationData } from "@/utils/data";
 import { useScrollTo } from "@/utils/useScrollTo";
 import { useIsUpMd } from "@/utils/responsive.utils";
+import { withBasePath } from "@/utils/withBasePath";
 
 type NavDataType = (typeof NavigationData)[0];
 const sideNavWidth = 300;
@@ -73,7 +74,7 @@ const SideNavHeadSide: React.FC<{}> = () => {
   return (
     <DrawerHeader className="flexCenterRow" sx={{ height: 120 }}>
       <div className="flexColumnCenterCenter">
-        <img src="/mix/tahaLogo.png" alt="logo" width={80} height={80} />
+        <img src={withBasePath("/mix/tahaLogo.png")} alt="logo" width={80} height={80} />
       </div>
     </DrawerHeader>
   );

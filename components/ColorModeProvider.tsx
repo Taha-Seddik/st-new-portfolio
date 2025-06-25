@@ -1,14 +1,9 @@
-'use client';
+// app/providers/ColorModeProvider.tsx
+"use client";
 
-import React, { createContext, useMemo, useState, ReactNode, useContext } from 'react';
-import { ThemeProvider, createTheme, PaletteMode } from '@mui/material';
-import baseThemeOptions from '@/styles/baseThemeOptions';
-
-// Same cookie-writer helper as before:
-function setCookie(name: string, value: string, days: number = 30) {
-  const maxAge = days * 24 * 60 * 60;
-  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}`;
-}
+import React, { createContext, useContext, useMemo, useState, ReactNode, useEffect } from "react";
+import { ThemeProvider, createTheme, PaletteMode } from "@mui/material";
+import baseThemeOptions from "@/styles/baseThemeOptions";
 
 interface ColorModeContextValue {
   mode: PaletteMode;
@@ -16,20 +11,39 @@ interface ColorModeContextValue {
 }
 
 const ColorModeContext = createContext<ColorModeContextValue>({
-  mode: 'light',
+  mode: "light",
   toggleMode: () => {},
 });
 
-type Props = {
-  children: ReactNode;
-  initialTheme: PaletteMode; // either 'light' or 'dark'
-};
+function getCookie(name: string): string | null {
+  // safely read document.cookie—this will only ever run in the browser
+  const match = document.cookie.split("; ").find((c) => c.startsWith(name + "="));
+  return match ? decodeURIComponent(match.split("=")[1]) : null;
+}
 
-export const ColorModeProvider: React.FC<Props> = ({ children, initialTheme }) => {
-  // Initialize from the server-provided prop
-  const [mode, setMode] = useState<PaletteMode>(initialTheme);
+function setCookie(name: string, value: string, days = 30) {
+  const maxAge = days * 24 * 60 * 60;
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}`;
+}
 
-  // Create MUI theme based on `mode`
+export const ColorModeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // 1) default to 'light' for SSR safety
+  const [mode, setMode] = useState<PaletteMode>("light");
+
+  // 2) in a useEffect (client-only), read the cookie and override
+  useEffect(() => {
+    const cookie = getCookie("THEME_MODE");
+    if (cookie === "dark" || cookie === "light") {
+      setMode(cookie);
+    }
+  }, []);
+
+  // 3) write back to the cookie whenever mode changes
+  useEffect(() => {
+    setCookie("THEME_MODE", mode, 30);
+  }, [mode]);
+
+  // 4) build your MUI theme
   const theme = useMemo(
     () =>
       createTheme({
@@ -38,20 +52,14 @@ export const ColorModeProvider: React.FC<Props> = ({ children, initialTheme }) =
           ...baseThemeOptions.palette,
           mode,
           background: {
-            default: mode === 'light' ? '#fafafa' : '#2e2e2e',
+            default: mode === "light" ? "#fafafa" : "#2e2e2e",
           },
         },
       }),
-    [mode],
+    [mode]
   );
 
-  const toggleMode = () => {
-    setMode((prev) => {
-      const newMode: PaletteMode = prev === 'light' ? 'dark' : 'light';
-      setCookie('THEME_MODE', newMode, 30);
-      return newMode;
-    });
-  };
+  const toggleMode = () => setMode((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
     <ColorModeContext.Provider value={{ mode, toggleMode }}>

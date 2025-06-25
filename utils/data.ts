@@ -1,5 +1,6 @@
 import { ProjectDetails } from "@/models/projectDetails";
 import { HomeSections } from "./constants";
+import { withBasePath } from "./withBasePath";
 
 export const NavigationData: { text: string; scrollTo: string }[] = [
   { text: "About", scrollTo: HomeSections.Intro },
@@ -13,19 +14,19 @@ export const EductionDataArr = [
     label: "Engineer's Degree - Software Engineering",
     place: "University of sciences in Tunis",
     fromTo: "2014-2017",
-    imgPath: "/mix/fst.png",
+    imgPath: withBasePath("/mix/fst.png"),
   },
   {
     label: "Preparatory Engineering Studies - Technology",
     place: "IPEIM",
     fromTo: "2012-2014",
-    imgPath: "/mix/ipeim.jpg",
+    imgPath: withBasePath("/mix/ipeim.jpg"),
   },
   {
     label: "Bachelor of Technology (B.Tech.) - Technology",
     place: "Ibno Rochd high school",
     fromTo: "2012",
-    imgPath: "/mix/ibnoRochd.png",
+    imgPath: withBasePath("/mix/ibnoRochd.png"),
   },
 ];
 
@@ -52,7 +53,7 @@ export const ExperienceDataArr = [
     companyName: "Blueberry Consulting",
     fromTo: "June 2022-May 2023",
     description: "",
-    imgPath: "/mix/blueberry.png",
+    imgPath: withBasePath("/mix/blueberry.png"),
   },
   {
     key: "b0bf73a5-e181-4c9c-a7d4-9bb05025b059",
@@ -60,7 +61,7 @@ export const ExperienceDataArr = [
     companyName: "Tnpulse",
     fromTo: "June 2017-May 2022",
     description: "",
-    imgPath: "/mix/suivi.png",
+    imgPath: withBasePath("/mix/suivi.png"),
   },
   // {
   //   key: "c4ce2bd0-1a69-45fd-ae81-32429703826d",
@@ -109,12 +110,12 @@ export const ProjectsData: ProjectDetails[] = [
     techStack: ["ExpressJS", "ReactJS"],
     demoLink: "https://art2doigt.tn/categoryProducts/Salon/97e6423f-9ef2-465a-9e41-b4944d377516",
     medias: [
-      { src: "/screenshots/shop1.png", type: "image" },
-      { src: "/screenshots/shop2.png", type: "image" },
-      { src: "/screenshots/shop3.png", type: "image" },
-      { src: "/screenshots/shop4.png", type: "image" },
-      { src: "/screenshots/shop5.png", type: "image" },
-      { src: "/screenshots/shop6.png", type: "image" },
+      { src: withBasePath("/screenshots/shop1.png"), type: "image" },
+      { src: withBasePath("/screenshots/shop2.png"), type: "image" },
+      { src: withBasePath("/screenshots/shop3.png"), type: "image" },
+      { src: withBasePath("/screenshots/shop4.png"), type: "image" },
+      { src: withBasePath("/screenshots/shop5.png"), type: "image" },
+      { src: withBasePath("/screenshots/shop6.png"), type: "image" },
     ],
   },
 
@@ -124,13 +125,13 @@ export const ProjectsData: ProjectDetails[] = [
     techStack: ["Angular", "Ionic"],
     githubLink: "https://github.com/Taha-Seddik/oklati-app",
     medias: [
-      { src: "/screenshots/oklati1.png", type: "video", embedUrl: "/screenshots/oklati0.mp4" },
-      { src: "/screenshots/oklati0.jpg", type: "image" },
-      { src: "/screenshots/oklati2.png", type: "image" },
-      { src: "/screenshots/oklati3.png", type: "image" },
-      { src: "/screenshots/oklati4.png", type: "image" },
-      { src: "/screenshots/oklati5.png", type: "image" },
-      { src: "/screenshots/oklati6.png", type: "image" },
+      { src: withBasePath("/screenshots/oklati1.png"), type: "video", embedUrl: "/screenshots/oklati0.mp4" },
+      { src: withBasePath("/screenshots/oklati0.jpg"), type: "image" },
+      { src: withBasePath("/screenshots/oklati2.png"), type: "image" },
+      { src: withBasePath("/screenshots/oklati3.png"), type: "image" },
+      { src: withBasePath("/screenshots/oklati4.png"), type: "image" },
+      { src: withBasePath("/screenshots/oklati5.png"), type: "image" },
+      { src: withBasePath("/screenshots/oklati6.png"), type: "image" },
     ],
   },
 ];
