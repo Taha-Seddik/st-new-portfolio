@@ -37,7 +37,7 @@ export const ExperienceDataArr = [
     companyName: "Talan",
     fromTo: "January 2024 - Present",
     description: "",
-    imgPath: "/mix/talan.jpg",
+    imgPath: withBasePath("/mix/talan.jpg"),
   },
   {
     key: "c78af883-c9b0-4ec5-9f23-2f8c24f23fdb",
@@ -45,7 +45,7 @@ export const ExperienceDataArr = [
     companyName: "TikiLearning",
     fromTo: "June 2023-January 2024",
     description: "",
-    imgPath: "/mix/tiki.jpg",
+    imgPath: withBasePath("/mix/tiki.jpg"),
   },
   {
     key: "32f60efb-4952-4815-8dfc-2fdfe714a046",
