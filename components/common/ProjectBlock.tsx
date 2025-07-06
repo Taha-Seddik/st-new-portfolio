@@ -1,24 +1,12 @@
 "use client";
 
 import { ProjectDetails } from "@/models/projectDetails";
-import {
-  Box,
-  Button,
-  Chip,
-  Grid,
-  Paper,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Chip, Grid, Paper, Typography, useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import ImageGallery, { ReactImageGalleryProps } from "react-image-gallery";
 import { useRef, useState } from "react";
-import {
-  RightNavRendrer,
-  LeftNavRendrer,
-  makeGalleryItems,
-} from "./ProjectBlock.utils";
+import { RightNavRendrer, LeftNavRendrer, makeGalleryItems } from "./ProjectBlock.utils";
 
 type IProps = {
   project: ProjectDetails;
@@ -40,42 +28,21 @@ export const ProjectBlock: React.FC<IProps> = ({ project }) => {
         <Grid size={{ md: 6, sm: 12 }} className="imgZone" width="100%">
           <ProjectMediaComponent project={project} />
         </Grid>
-        <Grid
-          size={{ md: 6, sm: 12 }}
-          p={2}
-          display="flex"
-          flexDirection="column"
-        >
-          <Typography
-            sx={{ typography: { xs: "button", md: "h6" } }}
-            component="div"
-            noWrap
-            gutterBottom
-          >
+        <Grid size={{ md: 6, sm: 12 }} p={2} display="flex" flexDirection="column">
+          <Typography sx={{ typography: { xs: "button", md: "h6" } }} component="div" noWrap gutterBottom>
             {project.title}
           </Typography>
-          <Typography
-            sx={{ typography: { xs: "body2", md: "body1" } }}
-            component="div"
-            gutterBottom
-          >
+          <Typography sx={{ typography: { xs: "body2", md: "body1" } }} component="div" gutterBottom>
             {project.description}
           </Typography>
           <Box display="flex" alignItems="center" mb={2}>
             {project.techStack.map((techX, i) => (
-              <Chip
-                key={techX}
-                label={techX}
-                sx={{ ml: i > 0 ? 1 : 0, mt: 1 }}
-              />
+              <Chip key={techX} label={techX} sx={{ ml: i > 0 ? 1 : 0, mt: 1 }} />
             ))}
           </Box>
           <Box display="flex" alignItems="center" mt={2}>
             {project.githubLink ? (
-              <Button
-                variant={isDark ? "contained" : "text"}
-                onClick={handleOpenCodeLink}
-              >
+              <Button variant={isDark ? "contained" : "text"} onClick={handleOpenCodeLink}>
                 Code
                 <GitHubIcon sx={{ ml: 1 }} />
               </Button>
@@ -105,11 +72,7 @@ const ProjectMediaComponent: React.FC<IProps> = (props) => {
     setShowVideo(!showVideo);
   };
 
-  const itemsForGallery = makeGalleryItems(
-    props.project,
-    showVideo,
-    toggleShowVideo
-  );
+  const itemsForGallery = makeGalleryItems(props.project, showVideo, toggleShowVideo);
 
   return (
     <ImageGallery
@@ -119,12 +82,8 @@ const ProjectMediaComponent: React.FC<IProps> = (props) => {
       showPlayButton={false}
       thumbnailPosition="bottom"
       showNav={true}
-      renderRightNav={(onClick, disabled) => (
-        <RightNavRendrer onClick={onClick} disabled={disabled} />
-      )}
-      renderLeftNav={(onClick, disabled) => (
-        <LeftNavRendrer onClick={onClick} disabled={disabled} />
-      )}
+      renderRightNav={(onClick, disabled) => <RightNavRendrer onClick={onClick} disabled={disabled} />}
+      renderLeftNav={(onClick, disabled) => <LeftNavRendrer onClick={onClick} disabled={disabled} />}
     />
   );
 };

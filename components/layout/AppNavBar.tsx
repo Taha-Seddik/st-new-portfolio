@@ -40,6 +40,7 @@ export const AppNavBar: React.FC<{}> = () => {
 
 const MainNavigation: React.FC<{}> = ({}) => {
   const { scrollToEl } = useScrollTo();
+
   const handleNavBtnClick = (navEl: (typeof NavigationData)[0]) => {
     scrollToEl(navEl.scrollTo);
   };

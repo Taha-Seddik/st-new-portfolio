@@ -36,9 +36,7 @@ export const ProjectsSectionComponent: React.FC<{}> = ({}) => {
       {ProjectsData.map((p, i) => (
         <React.Fragment key={p.title}>
           <ProjectBlock project={p} />
-          {i < ProjectsData.length - 1 ? (
-            <Divider sx={{ my: 2, borderStyle: "dashed" }} />
-          ) : null}
+          {i < ProjectsData.length - 1 ? <Divider sx={{ my: 2, borderStyle: "dashed" }} /> : null}
         </React.Fragment>
       ))}
     </CustomSection>
