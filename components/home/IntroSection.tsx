@@ -12,6 +12,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import MailIcon from "@mui/icons-material/Mail";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { withBasePath } from "@/utils/withBasePath";
+import { Box } from "@mui/material";
 
 const CustomSection = styled("section")(({ theme }) => ({
   margin: "0px auto",
@@ -91,8 +92,8 @@ export const IntroSectionComponent: React.FC<{}> = ({}) => {
             handleOpenSendMailPanel={handleOpenSendMailPanel}
           />
         </Grid>
-        <Grid size={{ md: 4, xs: 12 }} display="flex">
-          <span style={{ flexGrow: 1 }} />
+        <Grid size={{ md: 4, xs: 12 }} display="flex" justifyContent="center">
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "" } }} />
           <CustomAvatar sizes="" alt="taha seddik" src={withBasePath("/mix/tahaImg3.png")} variant="circular" />
         </Grid>
       </Grid>
